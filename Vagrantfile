@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do|config|
     config.vm.define "ansible" do|ansible| 
         ansible.vm.hostname = "master" 
         ansible.vm.box = "geerlingguy/centos7" 
-        ansible.vm.network "private_network", ip: "192.168.43.14" 
+        ansible.vm.network "private_network", ip: "192.168.43.104" 
         ansible.vm.provision "shell", inline: <<-SHELL
         yum update -y
         yum install ansible vim -y
@@ -22,7 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do|config|
     config.vm.define "app1" do|app| 
         app.vm.hostname = "webserver" 
         app.vm.box = "geerlingguy/centos7" 
-        app.vm.network "private_network", ip: "192.168.43.11" 
+        app.vm.network "private_network", ip: "192.168.43.101" 
     end 
     
     
@@ -30,7 +30,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do|config|
     config.vm.define "db" do|db| 
         db.vm.hostname = "database" 
         db.vm.box = "geerlingguy/centos7" 
-        db.vm.network "private_network", ip: "192.168.43.13" 
+        db.vm.network "private_network", ip: "192.168.43.103" 
     end 
     
     
